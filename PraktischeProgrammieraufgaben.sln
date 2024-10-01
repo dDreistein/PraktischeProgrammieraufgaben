@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg61x1", "Aufg61x1\Aufg61
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg7Durch3Und5Teilbar", "Aufg7Durch3Und5Teilbar\Aufg7Durch3Und5Teilbar.csproj", "{F32C892B-0BA5-43B0-934A-684894433953}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg8ZahlZuBinär", "Aufg8ZahlZuBinär\Aufg8ZahlZuBinär.csproj", "{B49EDBF9-2250-4114-8FEC-6E8BB987DB56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{F32C892B-0BA5-43B0-934A-684894433953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F32C892B-0BA5-43B0-934A-684894433953}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F32C892B-0BA5-43B0-934A-684894433953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B49EDBF9-2250-4114-8FEC-6E8BB987DB56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B49EDBF9-2250-4114-8FEC-6E8BB987DB56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B49EDBF9-2250-4114-8FEC-6E8BB987DB56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B49EDBF9-2250-4114-8FEC-6E8BB987DB56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
