@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg11DiagonaleLinie", "Auf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg12DoSchleife", "Aufg12DoSchleife\Aufg12DoSchleife.csproj", "{9547E1CD-A5F8-4ECE-8231-0C01D4052BED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg13Schaltjahr", "Aufg13Schaltjahr\Aufg13Schaltjahr.csproj", "{5E59DE13-61F4-4974-A708-32B59F46A03C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{9547E1CD-A5F8-4ECE-8231-0C01D4052BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9547E1CD-A5F8-4ECE-8231-0C01D4052BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9547E1CD-A5F8-4ECE-8231-0C01D4052BED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E59DE13-61F4-4974-A708-32B59F46A03C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E59DE13-61F4-4974-A708-32B59F46A03C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E59DE13-61F4-4974-A708-32B59F46A03C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E59DE13-61F4-4974-A708-32B59F46A03C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
