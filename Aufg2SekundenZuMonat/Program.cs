@@ -18,7 +18,7 @@ namespace Aufg2SekundenZuMonat
 
             if (int.TryParse(input, out int daysOfMonth) == true)
             {
-                if (daysOfMonth < 32)
+                if (daysOfMonth < 32 || daysOfMonth > 27)
                 {
                     Console.WriteLine($"Ein Monat mit {daysOfMonth} tagen hat {86400 * daysOfMonth} Sekunden.");
                 }
