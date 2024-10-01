@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg1Addierer", "Aufg1Addierer\Aufg1Addierer.csproj", "{2B48BE43-3797-42AB-BF3C-24DF95323705}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg2SekundenZuMonat", "Aufg2SekundenZuMonat\Aufg2SekundenZuMonat.csproj", "{817ED17D-E4A0-48E6-97B3-931E71D3B2DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B48BE43-3797-42AB-BF3C-24DF95323705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B48BE43-3797-42AB-BF3C-24DF95323705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B48BE43-3797-42AB-BF3C-24DF95323705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B48BE43-3797-42AB-BF3C-24DF95323705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{817ED17D-E4A0-48E6-97B3-931E71D3B2DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{817ED17D-E4A0-48E6-97B3-931E71D3B2DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{817ED17D-E4A0-48E6-97B3-931E71D3B2DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{817ED17D-E4A0-48E6-97B3-931E71D3B2DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {639A6080-BC9B-4191-B9D7-FD9A41A69730}
+	EndGlobalSection
+EndGlobal
