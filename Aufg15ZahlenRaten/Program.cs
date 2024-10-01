@@ -19,6 +19,7 @@
                 //Überprüffen ob das Rätzel gelöst ist.
                 while (!solved) {
                     if (int.TryParse(Console.ReadLine(), out int guess) && guess <= 100) {
+                        //Versuch Auswerten.
                         if (guess > randomNumber)
                         {
                             Console.WriteLine("Zahl ist zu Gross! Nächster Versuch: ");
@@ -31,6 +32,7 @@
                         {
                             Console.WriteLine($"Die Zahl stimmt! Du hast {trys} Versuche benötigt. Noch einmal Spielen? [y/n]");
 
+                            
                             if (Console.ReadLine() == "y") 
                             {
                                 exitKeyEntered = false;
@@ -45,7 +47,7 @@
                     }
                     else
                     {
-                        Console.WriteLine("Ungültige Eingabe.");
+                        Console.WriteLine("Ungültige Eingabe. Nächster Versuch: ");
                     }
                     trys++;
                 }
