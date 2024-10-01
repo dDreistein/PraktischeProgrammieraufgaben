@@ -3,23 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg1Addierer", "Aufg1Addierer\Aufg1Addierer.csproj", "{2B48BE43-3797-42AB-BF3C-24DF95323705}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg01Addierer", "Aufg1Addierer\Aufg01Addierer.csproj", "{2B48BE43-3797-42AB-BF3C-24DF95323705}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg2SekundenZuMonat", "Aufg2SekundenZuMonat\Aufg2SekundenZuMonat.csproj", "{817ED17D-E4A0-48E6-97B3-931E71D3B2DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg02SekundenZuMonat", "Aufg2SekundenZuMonat\Aufg02SekundenZuMonat.csproj", "{817ED17D-E4A0-48E6-97B3-931E71D3B2DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg3Flussdiagramm1", "Aufg3Flussdiagramm1\Aufg3Flussdiagramm1.csproj", "{AE9D61C3-055B-4168-B16B-919FEC4A487C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg03Flussdiagramm1", "Aufg3Flussdiagramm1\Aufg03Flussdiagramm1.csproj", "{AE9D61C3-055B-4168-B16B-919FEC4A487C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg4Monatsnamen", "Aufg4Monatsnamen\Aufg4Monatsnamen.csproj", "{0D86D438-712A-4418-9C67-C8457C1B20F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg04Monatsnamen", "Aufg4Monatsnamen\Aufg04Monatsnamen.csproj", "{0D86D438-712A-4418-9C67-C8457C1B20F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg5Flussdiagramm2", "Aufg5Flussdiagramm2\Aufg5Flussdiagramm2.csproj", "{68BD9E76-FE0A-4BF3-B63C-7B174EB5BF26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg05Flussdiagramm2", "Aufg5Flussdiagramm2\Aufg05Flussdiagramm2.csproj", "{68BD9E76-FE0A-4BF3-B63C-7B174EB5BF26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg61x1", "Aufg61x1\Aufg61x1.csproj", "{F07F1DBA-8872-42F9-A810-7B743E4A905A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg061x1", "Aufg61x1\Aufg061x1.csproj", "{F07F1DBA-8872-42F9-A810-7B743E4A905A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg7Durch3Und5Teilbar", "Aufg7Durch3Und5Teilbar\Aufg7Durch3Und5Teilbar.csproj", "{F32C892B-0BA5-43B0-934A-684894433953}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg07Durch3Und5Teilbar", "Aufg7Durch3Und5Teilbar\Aufg07Durch3Und5Teilbar.csproj", "{F32C892B-0BA5-43B0-934A-684894433953}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg8ZahlZuBinär", "Aufg8ZahlZuBinär\Aufg8ZahlZuBinär.csproj", "{B49EDBF9-2250-4114-8FEC-6E8BB987DB56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg08ZahlZuBinär", "Aufg8ZahlZuBinär\Aufg08ZahlZuBinär.csproj", "{B49EDBF9-2250-4114-8FEC-6E8BB987DB56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg9Quersumme", "Aufg9Quersumme\Aufg9Quersumme.csproj", "{FC22F5E6-E3D1-4E6E-82C3-68AFEDB81ABE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg09Quersumme", "Aufg9Quersumme\Aufg09Quersumme.csproj", "{FC22F5E6-E3D1-4E6E-82C3-68AFEDB81ABE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg10DurchQuersummeTeilbar", "Aufg10DurchQuersummeTeilbar\Aufg10DurchQuersummeTeilbar.csproj", "{32367C59-16FC-43A2-A9F6-9336E60A88B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{FC22F5E6-E3D1-4E6E-82C3-68AFEDB81ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC22F5E6-E3D1-4E6E-82C3-68AFEDB81ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC22F5E6-E3D1-4E6E-82C3-68AFEDB81ABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32367C59-16FC-43A2-A9F6-9336E60A88B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32367C59-16FC-43A2-A9F6-9336E60A88B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32367C59-16FC-43A2-A9F6-9336E60A88B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32367C59-16FC-43A2-A9F6-9336E60A88B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
