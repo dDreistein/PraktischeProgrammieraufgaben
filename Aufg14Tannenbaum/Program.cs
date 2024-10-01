@@ -31,14 +31,12 @@
                 for (int j = crownHeight - i; j >= 1; j--)
                 {
                     Console.Write(" ");
-
                 }
                 for (int k = 1; k <= 2 * i - 1; k++)
                 {
                     Console.Write("*");
                 }
                 Console.WriteLine();
-
             }
         }
 

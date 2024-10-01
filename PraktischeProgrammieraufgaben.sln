@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg13Schaltjahr", "Aufg13S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg14Tannenbaum", "Aufg14Tannenbaum\Aufg14Tannenbaum.csproj", "{538C0A39-A05A-4FE4-B4D0-E94A1ADD264E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg15ZahlenRaten", "Aufg15ZahlenRaten\Aufg15ZahlenRaten.csproj", "{00FB9531-AD91-4A4E-851C-78D09EBA1E76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{538C0A39-A05A-4FE4-B4D0-E94A1ADD264E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{538C0A39-A05A-4FE4-B4D0-E94A1ADD264E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{538C0A39-A05A-4FE4-B4D0-E94A1ADD264E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00FB9531-AD91-4A4E-851C-78D09EBA1E76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00FB9531-AD91-4A4E-851C-78D09EBA1E76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00FB9531-AD91-4A4E-851C-78D09EBA1E76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00FB9531-AD91-4A4E-851C-78D09EBA1E76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
