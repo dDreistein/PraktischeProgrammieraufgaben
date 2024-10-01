@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg1Addierer", "Aufg1Addie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg2SekundenZuMonat", "Aufg2SekundenZuMonat\Aufg2SekundenZuMonat.csproj", "{817ED17D-E4A0-48E6-97B3-931E71D3B2DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg3Flussdiagramm1", "Aufg3Flussdiagramm1\Aufg3Flussdiagramm1.csproj", "{AE9D61C3-055B-4168-B16B-919FEC4A487C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg4Monatsnamen", "Aufg4Monatsnamen\Aufg4Monatsnamen.csproj", "{0D86D438-712A-4418-9C67-C8457C1B20F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{817ED17D-E4A0-48E6-97B3-931E71D3B2DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{817ED17D-E4A0-48E6-97B3-931E71D3B2DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{817ED17D-E4A0-48E6-97B3-931E71D3B2DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE9D61C3-055B-4168-B16B-919FEC4A487C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE9D61C3-055B-4168-B16B-919FEC4A487C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE9D61C3-055B-4168-B16B-919FEC4A487C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE9D61C3-055B-4168-B16B-919FEC4A487C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D86D438-712A-4418-9C67-C8457C1B20F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D86D438-712A-4418-9C67-C8457C1B20F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D86D438-712A-4418-9C67-C8457C1B20F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D86D438-712A-4418-9C67-C8457C1B20F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
