@@ -17,7 +17,7 @@ internal class Program
 
             Console.WriteLine($"Das sind {n} Runden. Bereit für den Lauf?");
             Console.WriteLine("Ja/Nein");
-            if (Console.ReadLine() == "Ja")
+            if (Console.ReadLine().ToLower() == "ja")
             {
                 for (int i = 1; i <= n; i++)
                 {
