@@ -6,17 +6,23 @@
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
+            bool runProgram = true;
+
             Console.WriteLine("Gib die Breite des Waldes an: ");
             int terrainWidth = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Gib die Höhe des Waldes an: ");
             int terrainHeight = Convert.ToInt32(Console.ReadLine());
 
-            Console.Clear();
-
             string[,] terrain = SetupTerrain(terrainWidth, terrainHeight);
 
             DrawTerrain(terrain);
+
+            while(runProgram)
+            {
+                DrawTerrain(terrain);
+                Thread.Sleep(100); 
+            }
         }
 
         static string[,] SetupTerrain(int width, int height)
@@ -68,7 +74,8 @@
 
         static void DrawTerrain(string[,] terrain)
         {
-            for(int i = 0; i < terrain.GetLength(1); i++)
+            Console.Clear();
+            for (int i = 0; i < terrain.GetLength(1); i++)
             {
                 for(int j = 0; j < terrain.GetLength(0); j++)
                 {
