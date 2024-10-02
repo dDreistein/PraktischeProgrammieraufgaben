@@ -6,7 +6,6 @@ namespace Aufg18AlterBerechnen
     {
         static void Main(string[] args)
         {
-            bool exitKeyEntered = false;
 
             Console.WriteLine("Bitte gib ein Geburtsdatum ein [DD.MM.YYYY]: ");
             string input = Console.ReadLine();
@@ -28,18 +27,6 @@ namespace Aufg18AlterBerechnen
             else
             {
                 Console.WriteLine("Bitte gib das Geburtsdatum in einem Gültigen format an [DD.MM.YYYY]: ");
-            }
-        }
-
-        static bool IsExitKeyEntered()
-        {
-            if (Console.ReadKey().Key == ConsoleKey.Q)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
             }
         }
     }
