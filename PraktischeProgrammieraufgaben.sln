@@ -35,6 +35,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aufg15ZahlenRaten", "Aufg15
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg16VokaleZählen", "Aufg16VokaleZählen\Aufg16VokaleZählen.csproj", "{362B1623-E105-4DB8-9CE5-C9528B655350}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufg17WitzeAPI", "Aufg17WitzeAPI\Aufg17WitzeAPI.csproj", "{1DF5DDF1-38AE-4F86-A032-9EF0A9D2E314}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{362B1623-E105-4DB8-9CE5-C9528B655350}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{362B1623-E105-4DB8-9CE5-C9528B655350}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{362B1623-E105-4DB8-9CE5-C9528B655350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DF5DDF1-38AE-4F86-A032-9EF0A9D2E314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DF5DDF1-38AE-4F86-A032-9EF0A9D2E314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DF5DDF1-38AE-4F86-A032-9EF0A9D2E314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DF5DDF1-38AE-4F86-A032-9EF0A9D2E314}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
