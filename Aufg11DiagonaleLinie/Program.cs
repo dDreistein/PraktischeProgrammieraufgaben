@@ -10,13 +10,13 @@
         {
             for (int j = 1; j <= lineLength; j++)
             {
-                if (j - i == 0)
+                if (i == j)
                 {
                     Console.Write(" ");
                 }
                 else
                 {
-                    Console.Write("*");
+                    Console.Write("0");
                 }
             }
             Console.WriteLine();
