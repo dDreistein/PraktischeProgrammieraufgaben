@@ -20,12 +20,12 @@ namespace Aufg17WitzeAPI
                 Console.WriteLine(GetJokesFromAPI());
                 makeParagraph(1);
                 Console.Write("Nächsten Witz holen? [y/n] ");
-                exitKeyEntered = detectExitKey();
+                exitKeyEntered = IsExitKeyEntered();
                 makeParagraph(2);
             }
         }
 
-        static bool detectExitKey()
+        static bool IsExitKeyEntered()
         {
             if (Console.ReadKey().Key == ConsoleKey.Y)
             {
