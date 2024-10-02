@@ -15,8 +15,10 @@ internal class Program
             Console.WriteLine("------------------------------------------");
             Console.WriteLine("Zahl\t| Quersumme\t| Zahl / Quersumme");
             Console.WriteLine("------------------------------------------");
+
             //Inhalt
             for (int i = zahl1; i <= zahl2; i++){
+
                 //Überprüffen ob die Zahl durch die Quersumme teilbar ist.
                 if (i % CalculateCrossSum(i) == 0) {
                     //Inhalt schreiben.
