@@ -8,53 +8,85 @@ namespace Waldbrand
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            bool runProgram = true;
-
             bool doNewUpdate = true;
 
             Console.WriteLine("Funkenzündung (‰): ");
-            int sparkIgnition = Convert.ToInt32(Console.ReadLine());
+            //int sparkIgnition = Convert.ToInt32(Console.ReadLine());
+            string input1 = Console.ReadLine();
 
-            Console.WriteLine("Wachstum: ");
-            int growth = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Wachstum (%): ");
+            //int growth = Convert.ToInt32(Console.ReadLine());
+            string input2 = Console.ReadLine();
 
-            Console.WriteLine("Gib die Breite des Waldes an: ");
-            int terrainWidth = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Breite: ");
+            //int terrainWidth = Convert.ToInt32(Console.ReadLine());
+            string input3 = Console.ReadLine();
 
-            Console.WriteLine("Gib die Höhe des Waldes an: ");
-            int terrainHeight = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Höhe: ");
+            //int terrainHeight = Convert.ToInt32(Console.ReadLine());
+            string input4 = Console.ReadLine();
 
-            
-            int terrainSize = terrainHeight*terrainWidth;
-            
-            string[,] terrain = SetupTerrain(terrainWidth, terrainHeight);
-            string[,] prevTerrain = terrain;
+            Console.WriteLine("Frames pro Minute: ");
+            string input5 = Console.ReadLine();
 
-            while(runProgram)
+
+
+            if (int.TryParse(input1, out int sparkIgnition) && int.TryParse(input2, out int growth) &&
+                int.TryParse(input3, out int terrainWidth) && int.TryParse(input4, out int terrainHeight) && 
+                int.TryParse(input5, out int framesPerMin) && terrainWidth <= 50 && terrainHeight <= 50)
             {
-                //Verhindert.dass die Methode mehreremals in einem frame aufgeruffen wird.
-                if (doNewUpdate)
-                { 
-                    doNewUpdate = false;
-                    //Debuging
-                    Console.WriteLine("doNewUpdate set to False.");
-                    
-                    DrawTerrain(prevTerrain);
+                string[,] terrain = SetupTerrain(terrainWidth, terrainHeight);
+                string[,] prevTerrain = DeepCopy(terrain);
 
-                    //Den vorgang pausieren.
-                    Thread.Sleep(500);
-                    Console.ReadKey();
-
-                    doNewUpdate = terrainUpdate(terrain, prevTerrain, terrainWidth, terrainHeight, terrainSize, sparkIgnition);
+                while (true)
+                {
+                    //Verhindert.dass die Methode mehreremals in einem frame aufgeruffen wird.
                     if (doNewUpdate)
                     {
-                        //Den vorherigen frame speichern
-                        prevTerrain = terrain;
+                        doNewUpdate = false;
                         //Debuging
-                        Console.WriteLine("prevTerrain set to Terrain");
+                        //Console.WriteLine("doNewUpdate set to False.");
+
+                        DrawTerrain(prevTerrain);
+
+                        //Den vorgang pausieren.
+                        Thread.Sleep(60000/framesPerMin);
+                        //Console.ReadKey();
+
+                        doNewUpdate = terrainUpdate(terrain, prevTerrain, terrainWidth, terrainHeight, growth, sparkIgnition);
+                        if (doNewUpdate)
+                        {
+                            //Den vorherigen frame speichern
+                            prevTerrain = DeepCopy(terrain);
+                            //Debuging
+                            //Console.WriteLine("prevTerrain set to Terrain");
+                        }
+                    }
+                    if (Console.KeyAvailable)
+                    {
+                        ConsoleKeyInfo key = Console.ReadKey(true);
+                        break;
                     }
                 }
             }
+            else 
+            {
+                Console.WriteLine("Ungültige Eingabe: Nur in Ganzzahlen schreiben und Wald nicht grösser als 50x50");
+            }
+        }
+
+        static string[,] DeepCopy(string[,] input)
+        {
+            string[,] deepCopy = new string[input.GetLength(0), input.GetLength(1)];
+
+            for (int i = 0; i < input.GetLength(0); i++)
+            {
+                for (int j = 0; j < input.GetLength(1); j++)
+                {
+                    deepCopy[i, j] = input[i, j]; // Copy each element
+                }
+            }
+            return deepCopy;
         }
 
         static string[,] SetupTerrain(int width, int height)
@@ -133,9 +165,9 @@ namespace Waldbrand
                 terrainStringBuilder.AppendLine();
             }
             string terrainString = terrainStringBuilder.ToString();
-            //Console.Clear();
-            makeParagraph(1);
+            Console.Clear();
             Console.Write(terrainString);
+            Console.WriteLine("Um zu beenden, drücke eine beliebige Taste");
         }
 
         static void makeParagraph(int num)
@@ -160,13 +192,21 @@ namespace Waldbrand
                     {
                         terrain[j, i] = Embers();
                     }
+                    else if (prevTerrain[j, i] == Embers())
+                    {
+                        terrain[j, i] = Ground();
+                    }
+                    else if (terrain[j, i] == Ground())
+                    {
+                        terrain[j, i] = GroundUpdate(w);
+                    }
                     
                     //Debuging:
                     //Console.WriteLine($"Single Update for {j}, {i}.");
                 }
             }
             //Debuging:
-            Console.WriteLine("Update.");
+            //Console.WriteLine("Update.");
             return true;
         }
 
@@ -174,13 +214,9 @@ namespace Waldbrand
         {
             if (AreSurroundElements(Fire(), prevTerrain, x, y, terrainWidth, terrainHeight))
             {
-                Console.WriteLine("Fire Spred.");
                 return Fire();
-            }
-            else if (RandomBtw(1, 1000) <= z)
+            }else if (RandomBtw(1, 1000) <= z)
             {
-                //Debuging
-                Console.WriteLine("Lightning struck");
                 return Fire();
             }
             else
@@ -197,41 +233,53 @@ namespace Waldbrand
             int maxX = terrainWidth - 1;
             int maxY = terrainHeight - 1;
 
-            if (x > minX && y > minY && prevTerrain[x--, y--] == element)
+            if (x > minX && y > minY && prevTerrain[x - 1, y - 1] == element)
             {
                 return true;
             }
-            else if (y > minY && prevTerrain[x, y--] == element)
+            else if (y > minY && prevTerrain[x, y - 1] == element)
             {
                 return true;
             }
-            else if(x < maxX && y > minY && prevTerrain[x++, y--] == element)
+            else if(x < maxX && y > minY && prevTerrain[x + 1, y - 1] == element)
             {
                 return true;
             }
-            else if (x < maxX && prevTerrain[x++, y] == element)
+            else if (x < maxX && prevTerrain[x + 1, y] == element)
             {
                 return true;
             }
-            else if (x < maxX && y < maxY && prevTerrain[x++, y++] == element)
+            else if (x < maxX && y < maxY && prevTerrain[x + 1, y + 1] == element)
             {
                 return true;
             }
-            else if (y < maxY && prevTerrain[x, y++] == element)
+            else if (y < maxY && prevTerrain[x, y + 1] == element)
             {
                 return true;
             }
-            else if (x > minX && y < maxY && prevTerrain[x--, y++] == element)
+            else if (x > minX && y < maxY && prevTerrain[x - 1, y + 1] == element)
             {
                 return true;
             }
-            else if (x > minX && prevTerrain[x--, y] == element)
+            else if (x > minX && prevTerrain[x - 1, y] == element)
             {
                 return true;
             }
             else
             {
                 return false;
+            }
+        }
+
+        static string GroundUpdate(int w)
+        {
+            if (RandomBtw(1, 100) <= w)
+            {
+                return Tree();
+            }
+            else
+            {
+                return Ground();
             }
         }
     }
