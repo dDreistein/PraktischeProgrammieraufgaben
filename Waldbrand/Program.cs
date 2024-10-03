@@ -1,4 +1,6 @@
-﻿namespace Waldbrand
+﻿using System.Text;
+
+namespace Waldbrand
 {
     internal class Program
     {
@@ -14,13 +16,17 @@
             Console.WriteLine("Gib die Höhe des Waldes an: ");
             int terrainHeight = Convert.ToInt32(Console.ReadLine());
 
-            string[,] terrain = SetupTerrain(terrainWidth, terrainHeight);
+            int terrainSize = terrainHeight*terrainWidth;
 
+            string[,] terrain = SetupTerrain(terrainWidth, terrainHeight);
+            
             DrawTerrain(terrain);
 
             while(runProgram)
             {
+                
                 DrawTerrain(terrain);
+                string[,] previousTerrain = terrain;
                 Thread.Sleep(100); 
             }
         }
@@ -74,15 +80,20 @@
 
         static void DrawTerrain(string[,] terrain)
         {
-            Console.Clear();
+            StringBuilder terrainString = new StringBuilder();
+            
             for (int i = 0; i < terrain.GetLength(1); i++)
             {
-                for(int j = 0; j < terrain.GetLength(0); j++)
+                for (int j = 0; j < terrain.GetLength(0); j++)
                 {
-                    Console.Write(terrain[j, i]);
+                    terrainString.Append(terrain[j, i]);
                 }
-                makeParagraph(1);
+                terrainString.AppendLine();
             }
+
+            Console.Clear();
+
+            Console.Write(terrainString.ToString());
         }
 
         static void makeParagraph(int num)
@@ -91,6 +102,11 @@
             {
                 Console.WriteLine();
             }
+        }
+
+        static void terrainUpdate()
+        {
+
         }
     }
 }
