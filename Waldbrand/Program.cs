@@ -28,7 +28,6 @@ namespace Waldbrand
             int terrainSize = terrainHeight*terrainWidth;
             
             string[,] terrain = SetupTerrain(terrainWidth, terrainHeight);
-
             string[,] prevTerrain = terrain;
 
             while(runProgram)
@@ -37,19 +36,23 @@ namespace Waldbrand
                 if (doNewUpdate)
                 { 
                     doNewUpdate = false;
-
-                    //Console.ReadKey();
-                    DrawTerrain(prevTerrain);
-
-                    //Den vorherigen frame speichern
-                    prevTerrain = terrain;
-
+                    //Debuging
+                    Console.WriteLine("doNewUpdate set to False.");
                     
-                    doNewUpdate = terrainUpdate(terrain, prevTerrain, terrainWidth, terrainHeight, terrainSize, sparkIgnition);
+                    DrawTerrain(prevTerrain);
 
                     //Den vorgang pausieren.
                     Thread.Sleep(500);
                     Console.ReadKey();
+
+                    doNewUpdate = terrainUpdate(terrain, prevTerrain, terrainWidth, terrainHeight, terrainSize, sparkIgnition);
+                    if (doNewUpdate)
+                    {
+                        //Den vorherigen frame speichern
+                        prevTerrain = terrain;
+                        //Debuging
+                        Console.WriteLine("prevTerrain set to Terrain");
+                    }
                 }
             }
         }
@@ -153,24 +156,31 @@ namespace Waldbrand
                     {
                         terrain[j, i] = treeUpdate(prevTerrain, j, i, terrainWidth, terrainHeight, z);
                     }
-                    else if(prevTerrain[j, i] == Fire())
+                    else if (prevTerrain[j, i] == Fire())
                     {
-                        z = 0;
+                        terrain[j, i] = Embers();
                     }
+                    
+                    //Debuging:
+                    //Console.WriteLine($"Single Update for {j}, {i}.");
                 }
             }
+            //Debuging:
             Console.WriteLine("Update.");
             return true;
         }
 
         static string treeUpdate(string[,] prevTerrain, int x, int y, int terrainWidth, int terrainHeight, int z)
         {
-            if (RandomBtw(1, 1000) <= z)
+            if (AreSurroundElements(Fire(), prevTerrain, x, y, terrainWidth, terrainHeight))
             {
+                Console.WriteLine("Fire Spred.");
                 return Fire();
             }
-            else if (AreSurroundElements(Fire(), prevTerrain, x, y, terrainWidth, terrainHeight))
+            else if (RandomBtw(1, 1000) <= z)
             {
+                //Debuging
+                Console.WriteLine("Lightning struck");
                 return Fire();
             }
             else
@@ -187,43 +197,42 @@ namespace Waldbrand
             int maxX = terrainWidth - 1;
             int maxY = terrainHeight - 1;
 
-            if (x > minX && y > minY && prevTerrain[x - 1, y - 1] == element)
+            if (x > minX && y > minY && prevTerrain[x--, y--] == element)
             {
                 return true;
             }
-            if (y > minY && prevTerrain[x, y - 1] == element)
+            else if (y > minY && prevTerrain[x, y--] == element)
             {
                 return true;
             }
-            if(x < maxX && y > minY && prevTerrain[x + 1, y - 1] == element)
+            else if(x < maxX && y > minY && prevTerrain[x++, y--] == element)
             {
                 return true;
             }
-            if (x < maxX && prevTerrain[x + 1, y] == element)
+            else if (x < maxX && prevTerrain[x++, y] == element)
             {
                 return true;
             }
-            if (x < maxX && y < maxY && prevTerrain[x + 1, y + 1] == element)
+            else if (x < maxX && y < maxY && prevTerrain[x++, y++] == element)
             {
                 return true;
             }
-            if (y < maxY && prevTerrain[x, y + 1] == element)
+            else if (y < maxY && prevTerrain[x, y++] == element)
             {
                 return true;
             }
-            if (y < maxY && prevTerrain[x, y + 1] == element)
+            else if (x > minX && y < maxY && prevTerrain[x--, y++] == element)
             {
                 return true;
             }
-            if (x > minX && y < maxY && prevTerrain[x - 1, y + 1] == element)
+            else if (x > minX && prevTerrain[x--, y] == element)
             {
                 return true;
             }
-            if (x > minX && prevTerrain[x - 1, y] == element)
+            else
             {
-                return true; 
+                return false;
             }
-            return false;
         }
     }
 }
