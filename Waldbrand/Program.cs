@@ -11,55 +11,40 @@ namespace Waldbrand
             bool doNewUpdate = true;
 
             Console.WriteLine("Funkenzündung (‰): ");
-            //int sparkIgnition = Convert.ToInt32(Console.ReadLine());
+
             string input1 = Console.ReadLine();
 
             Console.WriteLine("Wachstum (%): ");
-            //int growth = Convert.ToInt32(Console.ReadLine());
             string input2 = Console.ReadLine();
 
             Console.WriteLine("Breite: ");
-            //int terrainWidth = Convert.ToInt32(Console.ReadLine());
             string input3 = Console.ReadLine();
 
             Console.WriteLine("Höhe: ");
-            //int terrainHeight = Convert.ToInt32(Console.ReadLine());
             string input4 = Console.ReadLine();
 
             Console.WriteLine("Frames pro Minute: ");
             string input5 = Console.ReadLine();
 
-
-
             if (int.TryParse(input1, out int sparkIgnition) && int.TryParse(input2, out int growth) &&
                 int.TryParse(input3, out int terrainWidth) && int.TryParse(input4, out int terrainHeight) && 
-                int.TryParse(input5, out int framesPerMin) && terrainWidth <= 50 && terrainHeight <= 50)
+                int.TryParse(input5, out int framesPerMin) && terrainWidth <= 100 && terrainHeight <= 100)
             {
                 string[,] terrain = SetupTerrain(terrainWidth, terrainHeight);
                 string[,] prevTerrain = DeepCopy(terrain);
 
                 while (true)
                 {
-                    //Verhindert.dass die Methode mehreremals in einem frame aufgeruffen wird.
                     if (doNewUpdate)
                     {
                         doNewUpdate = false;
-                        //Debuging
-                        //Console.WriteLine("doNewUpdate set to False.");
 
-                        DrawTerrain(prevTerrain);
-
-                        //Den vorgang pausieren.
                         Thread.Sleep(60000/framesPerMin);
-                        //Console.ReadKey();
 
                         doNewUpdate = terrainUpdate(terrain, prevTerrain, terrainWidth, terrainHeight, growth, sparkIgnition);
                         if (doNewUpdate)
                         {
-                            //Den vorherigen frame speichern
                             prevTerrain = DeepCopy(terrain);
-                            //Debuging
-                            //Console.WriteLine("prevTerrain set to Terrain");
                         }
                     }
                     if (Console.KeyAvailable)
@@ -71,7 +56,7 @@ namespace Waldbrand
             }
             else 
             {
-                Console.WriteLine("Ungültige Eingabe: Nur in Ganzzahlen schreiben und Wald nicht grösser als 50x50");
+                Console.WriteLine("Ungültige Eingabe: Nur in Ganzzahlen schreiben und Wald nicht grösser als 100x100");
             }
         }
 
@@ -83,7 +68,7 @@ namespace Waldbrand
             {
                 for (int j = 0; j < input.GetLength(1); j++)
                 {
-                    deepCopy[i, j] = input[i, j]; // Copy each element
+                    deepCopy[i, j] = input[i, j];
                 }
             }
             return deepCopy;
@@ -205,6 +190,7 @@ namespace Waldbrand
                     //Console.WriteLine($"Single Update for {j}, {i}.");
                 }
             }
+            DrawTerrain(prevTerrain);
             //Debuging:
             //Console.WriteLine("Update.");
             return true;
